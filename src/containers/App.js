@@ -8,12 +8,21 @@ import Home from '../components/Home';
 import Actors from '../components/Actors';
 import Directors from '../components/Directors';
 import Movies from '../components/Movies';
+import data from "../data.js"
 
 
 const App = (props) => {
   return (
     <Router>
-      {/*{code here}*/}
+      <div>
+        <NavBar />
+        <Route exact path = "/" component = {Home}/>
+        <Route exact path = "/movies" render = {()=> <Movies movies = {data.movies}/>}/>
+        <Route exact path = "/directors" component = {Directors}/>
+        <Route exact path = "/actors" component = {Actors}/>
+
+
+      </div>
     </Router>
   );
 };
